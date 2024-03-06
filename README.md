@@ -1,81 +1,35 @@
-# WebApp boilerplate with React JS and Flask API
+# DocDate 
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+DocDate is an app developend by me and Lorenzo Garofalo. The goal is to provide medical profesionals a tool to set up their working hours, services, prices... for the patients to book appointments.
+It is devloped using React and FlaskSQL. It uses the fullcalendar library too, and has conection with google calendar and gmail through the google API.
+This project is still in development.
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
 
-### 1) Installation:
+![Home](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/4738f320-12ae-4c81-9fd2-346d3f2fbecb)
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+## Dashboard
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+Here you can see your appointments and its details and your working hours (white), personal events or holydays. Is there is already and appointment or a holiday, this slots would not be elegible by patients to book.
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+![Calendar](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/7d297608-cd54-4760-aaf7-963cc6f94408)
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+You can also edit all your information at any time
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+![workinghours](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/7a95c7ec-e38b-4299-bc6c-e8aec2e481dc)
+![nonWorkinghours](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/cdfc2601-4b9c-4c42-a40d-fcdc7c6bb20d)
+![studio](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/889ab040-2a35-4544-9f53-493ebb5205ab)
+![services](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/7289a1d6-9a60-4b69-8c60-bb385d7fbe87)
+![imagen](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/6f03039b-219a-419f-bad4-ff463e5dc71e)
 
-### Undo a migration
+## Patient side
 
-You are also able to undo a migration by running
+By sharing your booking page url, patients will be able to book appointments by service
 
-```sh
-$ pipenv run downgrade
-```
 
-### Backend Populate Table Users
+![patient](https://github.com/Yoel-Cabaleiro/DocDate/assets/113912282/ddfe983c-dd41-4c52-8b0b-03da5632b1c3)
 
-To insert test users in the database execute the following command:
 
-```sh
-$ flask insert-test-users 5
-```
+If you connected the app with your google account, bookings will be shown in your google calendar too, and the patients will receive an email with the booking details in your behalf.
 
-And you will see the following message:
-
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
-
-### **Important note for the database and the data inside it**
-
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
-
-### Front-End Manual Installation:
-
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
-
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
-
-## Publish your website!
-
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
-
-### Contributors
-
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+We are planning to add more functionalities like the option for the patient to pay the service when they book or the posibility for several professionals to be linked to the same studio. 
